@@ -38,7 +38,7 @@ const navbar = () => {
     <Link
       key={link.name}
       href={link.href}
-      className={`relative group transition-colors duration-300 ${
+      className={`relative group transition-colors duration-300 font-mono ${
         scrolled ? "text-gray-800" : "text-white"
       }`}
     >
