@@ -1,3 +1,6 @@
+
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
 export default function ProductsPage() {
   // List of 12 sample shawls
   const products = Array.from({ length: 12 }, (_, i) => ({
@@ -8,14 +11,25 @@ export default function ProductsPage() {
   }));
 
   return (
-    <main className="py-20 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-6 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12">
-          Our Shawl Collection
-        </h1>
-
+    <main className="bg-gray-50">
+        <Navbar/>
+       <section className="relative h-96 bg-gray-200 flex items-center justify-center">
+        <img
+          src="/shawl-hero.jpg" // Add a hero image in public folder
+          alt="Kashmir Shawl Heritage"
+          className="absolute inset-0 w-full h-full object-cover opacity-50"
+        />
+        <div className="relative z-10 text-center px-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 drop-shadow-lg">
+            Our Shawl Collection
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-gray-700">
+            Preserving the timeless beauty of Kashmiri craftsmanship
+          </p>
+        </div>
+      </section>
         {/* Product Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-20 px-10">
           {products.map((product) => (
             <div
               key={product.id}
@@ -37,7 +51,7 @@ export default function ProductsPage() {
             </div>
           ))}
         </div>
-      </div>
+        <Footer/>
     </main>
   );
 }

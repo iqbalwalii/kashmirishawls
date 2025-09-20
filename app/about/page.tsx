@@ -1,8 +1,10 @@
 import Link from "next/link";
-
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 export default function AboutPage() {
   return (
     <main className="bg-gray-50">
+        <Navbar/>
       {/* Hero Section */}
       <section className="relative h-96 bg-gray-200 flex items-center justify-center">
         <img
@@ -88,7 +90,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gray-900 text-white text-center">
+      <section className="py-16 bg-gray-900 text-white text-center my-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Experience the Beauty of Kashmir
         </h2>
@@ -99,6 +101,7 @@ export default function AboutPage() {
           Explore Our Shawls
         </Link>
       </section>
+      <Footer/>
     </main>
   );
 }
